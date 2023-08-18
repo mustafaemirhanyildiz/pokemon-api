@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Pokemon API",
+      "description": "Pokemon API Dokümantasyonu"
+    },
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/api/pokemons": {
+        "get": {
+          "summary": "Tüm Pokemonları listeler",
+          "responses": {
+            "200": {
+              "description": "Başarılı yanıt",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Pokemon"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Pokemon": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+  

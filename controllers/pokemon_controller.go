@@ -10,13 +10,14 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"../models"
+	"pokemon-api/models"
 )
 
 var pokemonCollection *mongo.Collection
+var client *mongo.Client
 
 func init() {
-	pokemonCollection = client.Database("pokemonDB").Collection("pokemons")
+	pokemonCollection = client.Database("pokemon-db").Collection("pokemons")
 }
 
 // PokemonListEndpoint tüm Pokemonları listeler
